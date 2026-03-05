@@ -12,129 +12,23 @@
             overflow-x: hidden;
         }
         
-        /* Mobile responsive search results */
-        @media (max-width: 768px) {
-            .container-fluid {
-                padding-right: 0 !important;
-                padding-left: 0 !important;
+        /* Responsive News Items - Same as news.html */
+        @media (max-width: 767.98px) {
+            .d-flex.align-items-center.bg-white.border.p-3 {
+                flex-direction: column !important;
+                align-items: flex-start !important;
             }
-            
-            .container {
-                padding-right: 10px !important;
-                padding-left: 10px !important;
-                max-width: calc(100% - 20px) !important;
-            }
-            
-            .row {
-                margin-right: 0 !important;
-                margin-left: 0 !important;
-            }
-            
-            .search-result-item {
-                display: flex !important;
-                flex-direction: column;
-                margin-right: 0 !important;
-                margin-left: 0 !important;
-            }
-            
-            .search-result-item img {
+
+            .d-flex.align-items-center.bg-white.border.p-3 img {
                 width: 100% !important;
                 height: auto !important;
-                margin-bottom: 12px;
-                min-height: 200px;
+                max-height: 200px !important;
+                object-fit: cover !important;
+                margin-bottom: 10px !important;
             }
-            
-            .search-result-content {
+
+            .d-flex.align-items-center.bg-white.border.p-3 > div {
                 padding-left: 0 !important;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                overflow: hidden;
-            }
-            
-            .search-result-item h5 {
-                font-size: 0.9rem;
-                line-height: 1.2;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                margin-bottom: 8px !important;
-                max-width: 100%;
-            }
-            
-            .search-result-item p {
-                font-size: 0.8rem;
-                line-height: 1.4;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                max-width: 100%;
-            }
-            
-            .col-lg-4 {
-                display: none !important;
-            }
-            
-            .col-lg-8 {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-            
-            .col-12 {
-                padding-right: 0 !important;
-                padding-left: 0 !important;
-            }
-            
-            .search-result-item {
-                padding: 12px !important;
-                border: 1px solid #ddd;
-                margin-bottom: 12px;
-            }
-            
-            .search-result-item .badge {
-                font-size: 0.65rem;
-                padding: 0.35rem 0.5rem !important;
-            }
-            
-            .search-result-item small {
-                font-size: 0.7rem;
-            }
-            
-            .search-result-item .mb-2 {
-                margin-bottom: 0.5rem !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding-right: 8px !important;
-                padding-left: 8px !important;
-            }
-            
-            .search-result-item {
-                padding: 10px !important;
-            }
-            
-            .search-result-item h5 {
-                font-size: 0.8rem;
-                margin-bottom: 6px !important;
-            }
-            
-            .search-result-item p {
-                font-size: 0.7rem;
-            }
-            
-            .search-result-item img {
-                min-height: 150px;
-                margin-bottom: 10px;
-            }
-            
-            .search-result-item .badge {
-                font-size: 0.55rem;
-                padding: 0.3rem 0.4rem !important;
-            }
-            
-            .search-result-item small {
-                font-size: 0.65rem;
             }
         }
     </style>
@@ -267,9 +161,9 @@
                 <!-- News Item 1 -->
                 <div class="col-12 mb-3">
                     <a href="article/perhutani-majalengka.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/imgnews-700x435-5.jpg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/imgnews-700x435-5.jpg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Economy</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 26, 2026</small>
@@ -286,9 +180,9 @@
                 <!-- News Item 2 -->
                 <div class="col-12 mb-3">
                     <a href="article/bojan-hodak.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/news-700x435-2.jpg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/news-700x435-2.jpg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Sports</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 27, 2026</small>
@@ -305,9 +199,9 @@
                 <!-- News Item 3 -->
                 <div class="col-12 mb-3">
                     <a href="article/berita1.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/01.png" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/01.png" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Education</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Nov 26, 2025</small>
@@ -324,9 +218,9 @@
                 <!-- News Item 4 -->
                 <div class="col-12 mb-3">
                     <a href="article/berita2.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/berita2.jpg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/berita2.jpg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Economy</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 26, 2026</small>
@@ -343,9 +237,9 @@
                 <!-- News Item 5 -->
                 <div class="col-12 mb-3">
                     <a href="article/berita3.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/berita3.jpeg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/berita3.jpeg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Politics</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 27, 2026</small>
@@ -362,9 +256,9 @@
                 <!-- News Item 6 -->
                 <div class="col-12 mb-3">
                     <a href="article/masih-ingat-resbob.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/news-700x435-3.jpg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/news-700x435-3.jpg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Crime</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 20, 2026</small>
@@ -381,9 +275,9 @@
                 <!-- News Item 7 -->
                 <div class="col-12 mb-3">
                     <a href="article/longsor-bandung.html" style="text-decoration: none; color: inherit;">
-                        <div class="search-result-item d-flex align-items-center bg-white border p-3">
-                            <img src="img/akang.jpg" style="width: 180px; height: 120px; object-fit: cover; flex-shrink: 0;" alt="">
-                            <div class="search-result-content pl-3 w-100">
+                        <div class="d-flex align-items-center bg-white border p-3">
+                            <img src="img/akang.jpg" style="width: 180px; height: 120px; object-fit: cover;" alt="">
+                            <div class="pl-3 w-100">
                                 <div class="mb-2">
                                     <span class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2">Environment</span>
                                     <small class="text-muted"><i class="fa fa-calendar-alt mr-1"></i> Jan 27, 2026</small>
