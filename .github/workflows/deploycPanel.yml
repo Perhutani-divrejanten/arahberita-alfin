@@ -29,18 +29,18 @@ jobs:
         env:
           SHEETS_URL: ${{ secrets.SHEETS_URL }}
 
-      - name: Debug workspace
-        run: |
-          echo "pwd=$(pwd)"
-          ls -al
-
-      - name: Deploy via SFTP to cPanel
-        uses: appleboy/scp-action@master
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "article,css,js,img,lib,scripts,index.html,articles.json,contact.html,login.html,register.html,search.html,news.html"
-          target: /home/indonesiadaily/public_html/
-          rm: true
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./
+          server-dir: public_html/
+          exclude: |
+            .git*
+            .github*
+            tools/**
+            *.md
+            *.txt
