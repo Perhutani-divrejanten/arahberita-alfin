@@ -17,7 +17,7 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: wartajanten.net
+          server: 195.88.211.130
           username: deploy@wartajanten.net
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
