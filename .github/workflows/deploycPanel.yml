@@ -23,7 +23,7 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./
-          server-dir: ./
+          server-dir: /arahberita.wartajanten.my.id/
           timeout: 60000
           dangerous-clean-slate: false
           exclude: |
