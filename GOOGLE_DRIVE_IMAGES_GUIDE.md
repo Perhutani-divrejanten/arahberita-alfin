@@ -1,4 +1,4 @@
-﻿# 📸 Panduan Google Drive Images untuk Arah Berita
+﻿# 📸 Panduan Google Drive Images untuk Fokus Janten
 
 ## 🎯 **Cara Agar Google Drive Images Bisa Kebaca**
 
@@ -101,6 +101,7 @@ Dengan setup yang benar:
 
 **Gambar Google Drive Anda sekarang siap digunakan!** 📸✨</content>
 <parameter name="filePath">c:\KULIAH\MAGANG\Magang di Perhutani\indonesiadaily\GOOGLE_DRIVE_IMAGES_GUIDE.md
+
 
 
 

@@ -199,13 +199,13 @@
     {
       "id": 17,
       "folderName": "site-17-portal17",
-      "siteName": "Arah Berita",
-      "email": "arahberita@gmail.com",
-      "socialHandle": "arahberita",
+      "siteName": "Fokus Janten",
+      "email": "fokusjanten@gmail.com",
+      "socialHandle": "fokusjanten",
       "colors": {
-        "primary": "#1D4ED8",
-        "dark": "#1E3A8A",
-        "secondary": "#7F2F4F"
+        "primary": "#0EA5E9",
+        "dark": "#0F172A",
+        "secondary": "#22C55E"
       }
     },
     {
@@ -414,6 +414,7 @@
     }
   ]
 }
+
 
 
 

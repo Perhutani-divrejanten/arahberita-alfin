@@ -9,8 +9,8 @@ Saya telah membuat sistem otomatis untuk generate **34 folder website portal ber
 ### 1. **`tools/sites-config.json`**
 Template konfigurasi untuk 34 portal berita. Berisi:
 - **folderName**: Nama folder untuk setiap site (site-01, site-02, dst)
-- **siteName**: Nama portal berita (akan replace "Arah Berita")
-- **email**: Email portal (akan replace "arahberita@gmail.com")
+- **siteName**: Nama portal berita (akan replace "Fokus Janten")
+- **email**: Email portal (akan replace "fokusjanten@gmail.com")
 - **socialHandle**: Handle social media (akan replace "indonesiadaily")
 - **colors**: Tema warna
   - **primary**: Warna utama kuning (contoh: #FFCC00 → custom)
@@ -21,7 +21,7 @@ Template konfigurasi untuk 34 portal berita. Berisi:
 Script Node.js yang akan:
 1. Membaca `sites-config.json`
 2. Untuk setiap dari 34 site:
-   - Copy folder **Arah Berita** → folder baru
+   - Copy folder **Fokus Janten** → folder baru
    - Replace otomatis di **semua file** (.html, .css, .js, .json):
      - Nama portal berita
      - Email
@@ -113,10 +113,10 @@ Script akan mengganti di **semua file** (.html, .css, .js):
 
 | Yang Direplac | Diganti Dengan |
 |---|---|
-| `Arah Berita` | `siteName` dari config |
+| `Fokus Janten` | `siteName` dari config |
 | `indonesiadaily` | `siteName` (tanpa spaces) |
 | `indonesiadaily` | `socialHandle` |
-| `arahberita@gmail.com` | `email` |
+| `fokusjanten@gmail.com` | `email` |
 | `#FFCC00` (primary) | Warna primary dari config |
 | `#1E2024` (dark) | Warna dark dari config |
 | `#31404B` (secondary) | Warna secondary dari config |
@@ -190,6 +190,8 @@ Jika belum punya ide warna, berikut saran:
 ---
 
 Sekarang tinggal Anda cari nama-nama 34 portal berita dan warna-warnanya, terus edit config file dan jalankan scriptnya! 🚀
+
+
 
 
 

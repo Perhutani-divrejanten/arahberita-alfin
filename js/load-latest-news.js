@@ -61,13 +61,14 @@ async function loadLatestNews() {
             latestNewsRow.appendChild(colDiv);
             
             // Add advertisement after first 3 articles (setelah baris pertama)
-            if (index === 2 && !adsAdded) {
-                const adDiv = document.createElement('div');
-                adDiv.className = 'col-12 mb-4';
-                adDiv.innerHTML = '<a href="https://htmlcodex.com/downloading/?item=1541"><img class="img-fluid w-100" src="img/ads-728x90.png" alt="Advertisement"></a>';
-                latestNewsRow.appendChild(adDiv);
-                adsAdded = true;
-            }
+            // if (index === 2 && !adsAdded) {
+            //     const adDiv = document.createElement('div');
+            //     adDiv.className = 'col-12 mb-4';
+            //     adDiv.innerHTML = '<a href="https://htmlcodex.com/downloading/?item=1541"><img class="img-fluid w-100" src="img/ads-728x90.png" alt="Advertisement"></a>';
+            //     latestNewsRow.appendChild(adDiv);
+            //     adsAdded = true;
+            // }
+        });
         });
 
         console.log('✅ Latest news loaded successfully');

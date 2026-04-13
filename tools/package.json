@@ -1,25 +1,26 @@
 ﻿{
-  "name": "arahberita-article-generator",
+  "name": "fokusjanten-article-generator",
   "version": "1.0.0",
-  "description": "Generator artikel otomatis dari Google Sheets untuk Arah Berita",
+  "description": "Generator artikel otomatis dari Google Sheets untuk Fokus Janten",
   "main": "generate.js",
   "scripts": {
     "generate": "node generate.js",
     "start": "node generate.js"
   },
   "keywords": [
-    "arahberita",
+    "fokusjanten",
     "generator",
     "google-sheets",
     "html"
   ],
-  "author": "Arah Berita Team",
+  "author": "Fokus Janten Team",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.0",
     "handlebars": "^4.7.7"
   }
 }
+
 
 
 
