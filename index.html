@@ -1,0 +1,773 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arah Berita - Berita Terkini Indonesia</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="berita, news, indonesia, perhutani, lingkungan" name="keywords">
+    <meta content="Arah Berita - Portal berita terkini Indonesia dengan liputan lengkap tentang lingkungan, pendidikan, dan pembangunan berkelanjutan" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Latest News Custom Styles -->
+    <style>
+        .latest-news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .latest-news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .latest-news-card > a > img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .latest-news-card .article-title {
+            line-height: 1.4;
+            font-size: 1rem;
+            min-height: auto;
+            max-height: none;
+            overflow: visible;
+            text-overflow: initial;
+            display: block;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .latest-news-card .article-excerpt {
+            line-height: 1.4;
+            min-height: auto;
+            max-height: none;
+            overflow: visible;
+            text-overflow: initial;
+            display: block;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .latest-news-card .article-meta {
+            height: auto;
+            padding-top: 12px;
+            margin-top: auto;
+            border-top: 1px solid #eee;
+        }
+
+        .latest-news-card .article-meta img {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .latest-news-card .article-meta small {
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+<!-- Navbar Start -->
+<div class="container-fluid bg-white px-4 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <!-- LOGO KIRI (MEPET) -->
+        <a href="index.html" class="navbar-brand mr-5">
+            <span style="font-weight: bold; color: #166534; font-size: 24px; letter-spacing: -0.5px;"><span style="font-weight: bold; color: #166534; font-size: 24px; letter-spacing: -0.5px;">ARAH<span style="color: #2D5016; font-weight: normal; font-size: 18px; margin-left: 2px;">BERITA</span></span>
+        </a>
+
+        <!-- TOGGLER -->
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <!-- MENU TENGAH -->
+            <div class="navbar-nav mx-auto text-uppercase font-weight-bold">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="news.html" class="nav-item nav-link">News</a>
+                                <a href="contact.html" class="nav-item nav-link">About Us</a>
+                </div>
+
+<!-- SEARCH KANAN -->
+<form action="search.html" method="get">
+    <div class="input-group d-none d-lg-flex" style="width: 260px;">
+        <input type="text" name="q" class="form-control" placeholder="Cari berita...">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+     <!-- Main News Slider Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 px-0">
+                <div class="owl-carousel main-carousel position-relative">
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="article/perhutani-majalengka.html">
+                            <img class="img-fluid h-100" src="img/news-800x500-1.jpg" style="object-fit: cover;">
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Ekonomi</a>
+                                <a class="text-white" href="">Jan 26, 2026</a>
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="article/perhutani-majalengka.html">Perhutani KPH Majalengka Perkuat Sinergi dengan Kodim 0617 Majalengka untuk Dukung Pemberdayaan Ekonomi Desa</a>
+                        </div>
+                    </div>
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="article/bojan-hodak.html">
+                            <img class="img-fluid h-100" src="img/news-800x500-2.jpg" style="object-fit: cover;">
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Olahraga</a>
+                                <a class="text-white" href="">Jan 27, 2026</a>
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="article/bojan-hodak.html">Pertimbangan Bojan Ogah Buru-buru Mainkan Layvin Kurzawa, Didatangkan Persib dengan Nilai Fantastis.</a>
+                        </div>
+                    </div>
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="article/masih-ingat-resbob.html">
+                            <img class="img-fluid h-100" src="img/news-800x500-3.jpg" style="object-fit: cover;">
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Hukum</a>
+                                <a class="text-white" href="">Jan 20, 2026</a>
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="article/masih-ingat-resbob.html">Masih Ingat Resbob? Tersangka Kasus Penghinaan Suku Sunda dan Viking</a>
+                        </div>
+                    </div>
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="article/longsor-bandung.html">
+                            <img class="img-fluid h-100" src="img/akang.jpg" style="object-fit: cover;">
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Ekonomi</a>
+                                <a class="text-white" href="">Jan 26, 2026</a>
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="article/longsor-bandung.html">Warga Korban Longsor Cisarua Sempat Lihat 2 Orang Diduga Anggota TNI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 px-0">
+                <div class="row mx-0">
+                    <div class="col-md-6 px-0">
+                        <div class="position-relative overflow-hidden" style="height: 250px;">
+                            <a href="article/longsor-bandung.html">
+                            <img class="img-fluid w-100 h-100"
+                            src="img/longsor-bandung.jpg"
+                            style="object-fit: cover;">
+                            </a>
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Ekonomi</a>
+                                    <a class="text-white" href=""><small>Jan 26, 2026</small></a>
+                                </div>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/perhutani-majalengka.html">Perhutani KPH Majalengka Perkuat Sinergi dengan Kodim 0617 Majalengka untuk Dukung Pemberdayaan Ekonomi Desa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 px-0">
+                        <div class="position-relative overflow-hidden" style="height: 250px;">
+                            <a href="article/bojan-hodak.html">
+                            <img class="img-fluid w-100 h-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
+                            </a>
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Olahraga</a>
+                                    <a class="text-white" href=""><small>Jan 27, 2026</small></a>
+                                </div>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/bojan-hodak.html">Pertimbangan Bojan Ogah Buru-buru Mainkan Layvin Kurzawa, Didatangkan Persib dengan Nilai Fantastis.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 px-0">
+                        <div class="position-relative overflow-hidden" style="height: 250px;">
+                            <a href="article/masih-ingat-resbob.html">
+                            <img class="img-fluid w-100 h-100" src="img/news-700x435-3.jpg" style="object-fit: cover;">
+                            </a>
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Hukum</a>
+                                    <a class="text-white" href=""><small>Jan 20, 2026</small></a>
+                                </div>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/masih-ingat-resbob.html">Masih Ingat Resbob? Tersangka Kasus Penghinaan Suku Sunda dan Viking</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 px-0">
+                        <div class="position-relative overflow-hidden" style="height: 250px;">
+                            <a href="article/longsor-bandung.html">
+                            <img class="img-fluid w-100 h-100" src="img/news-700x435-4.jpg" style="object-fit: cover;">
+                            </a>
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Ekonomi</a>
+                                    <a class="text-white" href=""><small>Jan 26, 2026</small></a>
+                                </div>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/longsor-bandung.html">Warga Korban Longsor Cisarua Sempat Lihat 2 Orang Diduga Anggota TNI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main News Slider End -->
+
+
+    <!-- Breaking News Start -->
+    <div class="container-fluid bg-dark py-3 mb-3">
+        <div class="container">
+            <div class="row align-items-center bg-dark">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking News</div>
+                        <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                            style="width: calc(100% - 200px); padding-right: 90px;">
+                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="article/perhutani-majalengka.html">Perhutani KPH Majalengka Perkuat Sinergi dengan Kodim 0617 Majalengka</a></div>
+                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="article/longsor-bandung.html">Warga Korban Longsor Cisarua Sempat Lihat 2 Orang Diduga Anggota TNI</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breaking News End -->
+
+    <style>
+        .breaking-news-carousel-wrapper {
+            position: relative;
+            padding: 0 50px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .breaking-news-carousel {
+            width: 100%;
+        }
+
+        .breaking-news-carousel .owl-item {
+            display: flex;
+            align-items: center;
+            height: 70px;
+        }
+
+        .breaking-news-carousel .owl-item.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .breaking-news-carousel .breaking-news-item {
+            width: 100%;
+            padding: 0 20px;
+            color: white;
+            text-align: left;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .breaking-news-carousel .breaking-news-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.4;
+            transition: opacity 0.3s ease;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            padding-left: 10px;
+        }
+
+        .breaking-news-carousel .breaking-news-item a:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .breaking-news-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            padding: 0 5px;
+        }
+
+        .breaking-news-carousel .owl-nav button {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: none !important;
+            color: white !important;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            pointer-events: all;
+            transition: background 0.3s ease;
+            font-size: 18px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .breaking-news-carousel .owl-nav button:hover {
+            background: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        .breaking-news-carousel .owl-nav button.owl-prev {
+            left: 5px;
+        }
+
+        .breaking-news-carousel .owl-nav button.owl-next {
+            right: 5px;
+        }
+
+        .breaking-news-carousel .owl-dots {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: auto;
+        }
+
+        .breaking-news-carousel .owl-dot {
+            background: rgba(255, 255, 255, 0.3) !important;
+            border-radius: 50%;
+            margin: 0 5px;
+            width: 10px;
+            height: 10px;
+        }
+
+        .breaking-news-carousel .owl-dot.active {
+            background: white !important;
+        }
+
+        @media (max-width: 768px) {
+            .breaking-news-carousel-wrapper {
+                padding: 0 40px;
+                min-height: 60px;
+            }
+
+            .breaking-news-carousel .owl-item {
+                height: 60px;
+            }
+
+            .breaking-news-carousel .breaking-news-item a {
+                font-size: 14px;
+            }
+
+            .breaking-news-carousel .owl-nav button {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+
+            .breaking-news-carousel .owl-nav button.owl-prev {
+                left: 2px;
+            }
+
+            .breaking-news-carousel .owl-nav button.owl-next {
+                right: 2px;
+            }
+        }
+
+        /* Responsive text sizing for better scalability */
+        @media (max-width: 1200px) {
+            .latest-news-card .article-title {
+                font-size: 14px;
+            }
+
+            .latest-news-card .article-excerpt {
+                font-size: 12px;
+            }
+
+            .section-title h4 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .latest-news-card .article-title {
+                font-size: 13px;
+            }
+
+            .section-title h4 {
+                font-size: 16px;
+            }
+
+            .section-title {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .latest-news-card {
+                margin-bottom: 20px;
+            }
+
+            .latest-news-card .article-title {
+                font-size: 12px;
+            }
+
+            .section-title h4 {
+                font-size: 14px;
+            }
+
+            .section-title {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+        
+
+
+    <!-- Featured News Slider Start -->
+    <div class="container-fluid" style="background: #fff; padding: 35px 0;">
+        <div class="container">
+            <div class="section-title mb-4">
+                <h4 class="m-0 text-uppercase font-weight-bold">Berita Unggulan</h4>
+            </div>
+            <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <a href="article/perhutani-majalengka.html">
+                    <img class="img-fluid h-100" src="img/imgnews-700x435-5.jpg" style="object-fit: cover;">
+                    </a>
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary news-badge mr-2"
+                                href="">Ekonomi</a>
+                            <a class="text-white" href=""><small>Jan 26, 2026</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/perhutani-majalengka.html">Perhutani KPH Majalengka Perkuat Sinergi...</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <a href="article/bojan-hodak.html">
+                    <img class="img-fluid h-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
+                    </a>
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary news-badge mr-2"
+                                href="">Olahraga</a>
+                            <a class="text-white" href=""><small>Jan 27, 2026</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/bojan-hodak.html">Pertimbangan Bojan Ogah Buru-buru Mainkan Layvin Kurzawa...</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <a href="article/masih-ingat-resbob.html">
+                    <img class="img-fluid h-100" src="img/news-700x435-3.jpg" style="object-fit: cover;">
+                    </a>
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary news-badge mr-2"
+                            href="">Hukum</a>
+
+                            <a class="text-white" href=""><small>Jan 20, 2026</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/masih-ingat-resbob.html">Masih Ingat Resbob? Tersangka Kasus Penghinaan...</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <a href="article/longsor-bandung.html">
+                    <img class="img-fluid h-100" src="img/news-700x435-4.jpg" style="object-fit: cover;">
+                    </a>
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary news-badge mr-2"
+                                href="">Ekonomi</a>
+                            <a class="text-white" href=""><small>Jan 26, 2026</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="article/longsor-bandung.html">Warga Korban Longsor Cisarua Sempat Lihat 2 Orang...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured News Slider End -->
+
+
+    <!-- News With Sidebar Start -->
+    <div class="container-fluid" style="background: #f8f8f8; padding: 40px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-title mb-4">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Berita Terbaru</h4>
+                        <a class="text-primary font-weight-medium text-decoration-none" href="news.html">Lihat Semua ?</a>
+                    </div>
+                    <div class="row" id="latestNewsRow">
+                        <!-- Latest news items are dynamically generated here -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    
+
+                    
+
+                    <!-- Trending News Start -->
+                    <div class="mb-5">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Berita Trending</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-4">
+                            <div class="d-flex align-items-center bg-white mb-4 pb-3 border-bottom" style="min-height: 90px;">
+                                <a href="article/perhutani-majalengka.html" class="flex-shrink-0 mr-3">
+                                    <img src="img/imgnews-700x435-5.jpg" alt="" style="width: 100px; height: 90px; object-fit: cover; border-radius: 3px;">
+                                </a>
+                                <div class="flex-grow-1">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary news-badge mr-2" href="">Ekonomi</a>
+                                        <a class="text-muted" href=""><small>Jan 26</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold small" href="article/perhutani-majalengka.html">Perhutani KPH Majalengka...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-4 pb-3 border-bottom" style="min-height: 90px;">
+                                <a href="article/bojan-hodak.html" class="flex-shrink-0 mr-3">
+                                    <img src="img/news-700x435-2.jpg" alt="" style="width: 100px; height: 90px; object-fit: cover; border-radius: 3px;">
+                                </a>
+                                <div class="flex-grow-1">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary news-badge mr-2" href="">Olahraga</a>
+                                        <a class="text-muted" href=""><small>Jan 27</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold small" href="article/bojan-hodak.html">Bojan Pertimbang...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-4 pb-3 border-bottom" style="min-height: 90px;">
+                                <a href="article/masih-ingat-resbob.html" class="flex-shrink-0 mr-3">
+                                    <img src="img/news-700x435-3.jpg" alt="" style="width: 100px; height: 90px; object-fit: cover; border-radius: 3px;">
+                                </a>
+                                <div class="flex-grow-1">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary news-badge mr-2" href="">Hukum</a>
+                                        <a class="text-muted" href=""><small>Jan 20</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold small" href="article/masih-ingat-resbob.html">Masih Ingat Resbob?</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white" style="min-height: 90px;">
+                                <a href="article/longsor-bandung.html" class="flex-shrink-0 mr-3">
+                                    <img src="img/akang.jpg" alt="" style="width: 100px; height: 90px; object-fit: cover; border-radius: 3px;">
+                                </a>
+                                <div class="flex-grow-1">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary news-badge mr-2" href="">Ekonomi</a>
+                                        <a class="text-muted" href=""><small>Jan 27</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold small" href="article/longsor-bandung.html">Warga Korban Longsor...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trending News End -->
+
+                    <!-- Tags Start -->
+                    <div class="mb-5">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Kategori</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-4">
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="search.html?q=Lingkungan" class="btn btn-sm btn-outline-secondary">Lingkungan</a>
+                                <a href="search.html?q=Ekonomi" class="btn btn-sm btn-outline-secondary">Ekonomi</a>
+                                <a href="search.html?q=Keamanan" class="btn btn-sm btn-outline-secondary">Keamanan</a>
+                                <a href="search.html?q=Pendidikan" class="btn btn-sm btn-outline-secondary">Pendidikan</a>
+                                <a href="search.html?q=Pangan" class="btn btn-sm btn-outline-secondary">Pangan</a>
+                                <a href="search.html?q=Hukum" class="btn btn-sm btn-outline-secondary">Hukum</a>
+                                <a href="search.html?q=Olahraga" class="btn btn-sm btn-outline-secondary">Olahraga</a>
+                                <a href="search.html?q=Kesehatan" class="btn btn-sm btn-outline-secondary">Kesehatan</a>
+                                <a href="search.html?q=Sosial" class="btn btn-sm btn-outline-secondary">Sosial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tags End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- News With Sidebar End -->
+
+
+    <!-- Footer Start -->
+<div class="container-fluid bg-dark pt-4 px-sm-3 px-md-5" style="margin-top: 40px;">
+    <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Berita Populer</h5>
+            <div class="mb-3">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Ekonomi</a>
+                    <a class="text-body" href=""><small>Jan 26, 2026</small></a>
+                </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="/article/perhutani-majalengka.html">Perhutani KPH Majalengka Perkuat Sinergi dengan Kodim...</a>
+            </div>
+            <div class="mb-3">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Olahraga</a>
+                    <a class="text-body" href=""><small>Jan 27, 2026</small></a>
+                </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="/article/bojan-hodak.html">Pertimbangan Bojan Ogah Buru-buru Mainkan Layvin Kurzawa...</a>
+            </div>
+            <div class="">
+                <div class="mb-2">
+                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Ekonomi</a>
+                    <a class="text-body" href=""><small>Jan 27, 2026</small></a>
+                </div>
+                <a class="small text-body text-uppercase font-weight-medium" href="/article/berita3.html">6 Kesaksian Ahok Blak-blakan di Sidang Kasus Minyak...</a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Link Cepat</h5>
+            <div class="d-flex flex-column">
+                <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Beranda</a>
+                <a class="text-white mb-2" href="news.html"><i class="fa fa-angle-right mr-2"></i>Berita Terkini</a>
+                </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Kategori</h5>
+            <div id="footerCategories" class="d-flex flex-wrap m-n1">
+                <!-- populated by js/footer-categories.js -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
+    <p class="m-0 text-center text-white">&copy; 2026 <a href="index.html" class="text-primary">Arah Berita</a>. Portal Berita Terpercaya Indonesia. All Rights Reserved.</p>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+   <!-- JavaScript Libraries -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Authentication Script -->
+    <script src="js/auth.js"></script>
+    
+    <!-- Dynamic Content Loaders -->
+    <script src="js/load-main-carousel.js"></script>
+    <script src="js/load-breaking-news.js"></script>
+    <script src="js/load-featured-news.js"></script>
+    <script src="js/load-trending-news.js"></script>
+    <script src="js/load-latest-news.js"></script>
+
+    <script>
+    // Display current date
+    const dateElement = document.getElementById("currentDate");
+    if (dateElement) {
+        const today = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+    }
+
+    // Newsletter form handler
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('newsletterForm');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var emailEl = document.getElementById('newsletterEmail');
+            var email = emailEl ? emailEl.value.trim() : '';
+            if (email) {
+                alert('Terima kasih! Anda telah berlangganan: ' + email);
+                form.reset();
+            } else {
+                alert('Silakan masukkan alamat email yang valid.');
+            }
+        });
+    });
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

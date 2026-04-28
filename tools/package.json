@@ -1,0 +1,23 @@
+{
+  "name": "arahberita-article-generator",
+  "version": "1.0.0",
+  "description": "Generator artikel otomatis dari Google Sheets untuk Arah Berita",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js",
+    "start": "node generate.js"
+  },
+  "keywords": [
+    "Arahberita",
+    "generator",
+    "google-sheets",
+    "html"
+  ],
+  "author": "Arah Berita Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.2.0",
+    "handlebars": "^4.7.7"
+  }
+}

@@ -1,0 +1,45 @@
+name: Deploy ke cPanel
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 8 * * *'    # otomatis update setiap 6 jam
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 195.88.211.130
+          username: deploy@wartajanten.net
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          local-dir: ./
+          server-dir: /fokusjanten/
+          timeout: 60000
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            *.bak*
+            articles_temp.json
+            .DS_Store
+            .env
+            .env.local
+            *.log
+            TROUBLESHOOTING.md
+            AUDIT_REPORT.md
+            PERBAIKAN_STATUS.md
+            final-verification.ps1
+            fix-encoding.ps1
+            rebrand-to-warta-janten.ps1

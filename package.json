@@ -1,0 +1,19 @@
+﻿{
+  "name": "arahberita",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.4.0",
+      
+    "handlebars": "^4.7.8"
+  },
+  "scripts": {
+    "generate": "node tools/generate.js",
+    "cleanup-site": "node tools/site-cleanup.js"
+  }
+}
+
+
+
+
+
