@@ -38,6 +38,67 @@ function convertGoogleDriveLink(url) {
   return url;
 }
 
+function normalizeDateString(date) {
+  if (!date) return '';
+  const str = String(date).trim();
+  const normalized = str.replace(/\s*-\s*/g, '-').replace(/\s*\/\s*/g, '/');
+
+  const isoMatch = normalized.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
+  if (isoMatch) {
+    const [, year, month, day] = isoMatch;
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  }
+
+  const altMatch = normalized.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
+  if (altMatch) {
+    const [, day, month, year] = altMatch;
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  }
+
+  const parsed = Date.parse(str);
+  if (!Number.isNaN(parsed)) {
+    return new Date(parsed).toISOString().split('T')[0];
+  }
+
+  return str;
+}
+
+function extractDateFromLocalContent(content) {
+  if (!content) return '';
+
+  const findDateText = () => {
+    const monthDateMatch = content.match(/>(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},\s+\d{4}</i);
+    if (monthDateMatch) {
+      return monthDateMatch[0].slice(1, -1).trim();
+    }
+
+    const isoMatch = content.match(/(\d{4})\s*-\s*(\d{1,2})\s*-\s*(\d{1,2})/);
+    if (isoMatch) {
+      return `${isoMatch[1]}-${isoMatch[2].padStart(2, '0')}-${isoMatch[3].padStart(2, '0')}`;
+    }
+
+    const slashMatch = content.match(/(\d{1,2})\s*\/\s*(\d{1,2})\s*\/\s*(\d{4})/);
+    if (slashMatch) {
+      return `${slashMatch[3]}-${slashMatch[2].padStart(2, '0')}-${slashMatch[1].padStart(2, '0')}`;
+    }
+
+    return '';
+  };
+
+  const candidate = findDateText();
+  if (!candidate) return '';
+
+  const normalized = normalizeDateString(candidate);
+  const parsed = Date.parse(normalized);
+  if (Number.isNaN(parsed)) return '';
+
+  const year = new Date(parsed).getUTCFullYear();
+  const currentYear = new Date().getUTCFullYear();
+  if (year < 2000 || year > currentYear + 2) return '';
+
+  return normalized;
+}
+
 function backupArticlesJson() {
   const timestamp = Math.floor(Date.now() / 1000);
   const backupPath = `${ARTICLES_JSON_PATH}.bak.${timestamp}`;
@@ -123,11 +184,12 @@ function scanLocalArticles() {
         category = badgeMatch[1].trim();
       }
       
+      const localDate = extractDateFromLocalContent(content);
       localArticles.push({
         title,
         excerpt,
         category: category,
-        date: new Date().toISOString().split('T')[0],
+        date: localDate || '',
         image: imagePath,
         url: `article/${slug}.html`,
         slug,
@@ -224,7 +286,7 @@ async function generateArticles() {
 
         const articleData = {
           title: row.title || 'Untitled',
-          date: row.date || new Date().toISOString().split('T')[0],
+          date: normalizeDateString(row.date) || new Date().toISOString().split('T')[0],
           category: row.category || row.badge || 'News',
           badge: row.badge || row.category || 'News',
           image: imagePathForHTML,
@@ -292,8 +354,20 @@ async function generateArticles() {
       existingArticles = existingArticles.filter(a => sheetSlugs.has(a.slug) || a.isLocal === true);
     }
 
-    fs.writeFileSync(ARTICLES_JSON_PATH, JSON.stringify(existingArticles, null, 2), 'utf8');
-    console.log(`💾 Updated ${ARTICLES_JSON_PATH}`);
+    // SORT BY DATE (newest first) before saving
+    const sortedArticles = existingArticles.sort((a, b) => {
+      const dateA = Date.parse(normalizeDateString(a.date));
+      const dateB = Date.parse(normalizeDateString(b.date));
+      if (!Number.isNaN(dateA) && !Number.isNaN(dateB)) {
+        return dateB - dateA;
+      }
+      if (!Number.isNaN(dateA)) return -1;
+      if (!Number.isNaN(dateB)) return 1;
+      return 0;
+    });
+
+    fs.writeFileSync(ARTICLES_JSON_PATH, JSON.stringify(sortedArticles, null, 2), 'utf8');
+    console.log(`💾 Updated ${ARTICLES_JSON_PATH} (sorted by date, newest first)`);
 
     console.log(`\n📋 Summary:`);
     console.log(`   ✨ New: ${newCount}`);
