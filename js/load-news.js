@@ -71,6 +71,31 @@ document.addEventListener('DOMContentLoaded', function() {
         return col;
     }
 
+    function normalizeDateString(date) {
+        if (!date) return '';
+        const str = String(date).trim();
+        const normalized = str.replace(/\s*-\s*/g, '-').replace(/\s*\/\s*/g, '/');
+
+        const isoMatch = normalized.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
+        if (isoMatch) {
+            const [, year, month, day] = isoMatch;
+            return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+        }
+
+        const altMatch = normalized.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
+        if (altMatch) {
+            const [, day, month, year] = altMatch;
+            return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+        }
+
+        const parsed = Date.parse(str);
+        if (!Number.isNaN(parsed)) {
+            return new Date(parsed).toISOString().split('T')[0];
+        }
+
+        return str;
+    }
+
     // Fetch articles.json dan render (use relative path)
     fetch('articles.json')
         .then(response => {
@@ -81,8 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear existing hardcoded items
             newsContainer.innerHTML = '';
 
+            // Sort articles newest-first by date when possible
+            const sortedArticles = Array.isArray(articles)
+                ? articles.slice().sort((a, b) => {
+                    const dateA = Date.parse(normalizeDateString(a.date));
+                    const dateB = Date.parse(normalizeDateString(b.date));
+                    if (!Number.isNaN(dateA) && !Number.isNaN(dateB)) {
+                        return dateB - dateA;
+                    }
+                    if (!Number.isNaN(dateA)) return -1;
+                    if (!Number.isNaN(dateB)) return 1;
+                    return 0;
+                })
+                : articles;
+
             // Render semua artikel dari articles.json
-            articles.forEach(article => {
+            sortedArticles.forEach(article => {
                 newsContainer.appendChild(renderNewsItem(article));
             });
 
