@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return col;
     }
 
-    // Fetch articles.json dan render (use absolute path)
-    fetch('/articles.json')
+    // Fetch articles.json dan render (use relative path)
+    fetch('articles.json')
         .then(response => {
             if (!response.ok) throw new Error('Failed to load articles.json');
             return response.json();
@@ -81,22 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear existing hardcoded items
             newsContainer.innerHTML = '';
 
-            // Sort articles newest-first by date when possible
-            const sortedArticles = Array.isArray(articles)
-                ? articles.slice().sort((a, b) => {
-                    const dateA = Date.parse(a.date);
-                    const dateB = Date.parse(b.date);
-                    if (!Number.isNaN(dateA) && !Number.isNaN(dateB)) {
-                        return dateB - dateA;
-                    }
-                    if (!Number.isNaN(dateA)) return -1;
-                    if (!Number.isNaN(dateB)) return 1;
-                    return 0;
-                })
-                : articles;
-
             // Render semua artikel dari articles.json
-            sortedArticles.forEach(article => {
+            articles.forEach(article => {
                 newsContainer.appendChild(renderNewsItem(article));
             });
 
