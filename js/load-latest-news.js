@@ -10,7 +10,7 @@ function truncateText(text, maxLength) {
 // Load Latest News section dynamically from articles.json
 async function loadLatestNews() {
     try {
-        const response = await fetch('/articles.json');
+        const response = await fetch('articles.json');
         const articles = await response.json();
 
         // Ambil 12 artikel paling akhir
