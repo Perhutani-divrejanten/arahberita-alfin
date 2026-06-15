@@ -106,28 +106,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear existing hardcoded items
             newsContainer.innerHTML = '';
 
-            // Sort articles newest-first by date when possible.
-            // If dates are equal or unparseable, fall back to spreadsheet order:
-            // later items in `articles.json` (higher index) are considered newer.
+            // Sort articles purely by slug number descending.
             const sortedArticles = Array.isArray(articles)
                 ? (() => {
                     const withIndex = articles.map((article, idx) => ({ article, idx }));
                     withIndex.sort((aObj, bObj) => {
                         const a = aObj.article;
                         const b = bObj.article;
-                        const dateA = Date.parse(normalizeDateString(a.date));
-                        const dateB = Date.parse(normalizeDateString(b.date));
-
-                        if (!Number.isNaN(dateA) && !Number.isNaN(dateB)) {
-                            if (dateB !== dateA) return dateB - dateA; // newest-first
-                            // same parsed date -> use original index as tiebreaker (higher index first)
-                            return bObj.idx - aObj.idx;
-                        }
-
-                        if (!Number.isNaN(dateA)) return -1;
-                        if (!Number.isNaN(dateB)) return 1;
-
-                        // both dates invalid/unparseable -> preserve spreadsheet recency (higher index first)
+                        const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                        const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                        if (numB !== numA) return numB - numA;
                         return bObj.idx - aObj.idx;
                     });
                     return withIndex.map(x => x.article);
