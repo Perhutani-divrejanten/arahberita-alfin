@@ -8,13 +8,24 @@ function truncateText(text, maxLength) {
 }
 
 // Load Latest News section dynamically from articles.json
+function sortArticlesBySlugDesc(articles) {
+    return Array.isArray(articles)
+        ? articles.slice().sort((a, b) => {
+            const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+            const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+            return numB - numA;
+        })
+        : articles;
+}
+
 async function loadLatestNews() {
     try {
         const response = await fetch('articles.json');
         const articles = await response.json();
 
+        const sortedArticles = sortArticlesBySlugDesc(articles);
         // Ambil 12 artikel paling akhir
-        const latestArticles = articles.slice(2, 14);
+        const latestArticles = sortedArticles.slice(2, 14);
 
         // Simple container lookup by ID
         const latestNewsRow = document.getElementById('latestNewsRow');

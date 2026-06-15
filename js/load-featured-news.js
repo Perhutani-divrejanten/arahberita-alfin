@@ -57,6 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return item;
     }
 
+    function sortArticlesBySlugDesc(articles) {
+        return Array.isArray(articles)
+            ? articles.slice().sort((a, b) => {
+                const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                return numB - numA;
+            })
+            : articles;
+    }
+
     // Fetch articles.json dan update featured news
     fetch('/articles.json')
         .then(response => {
@@ -67,10 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear existing items
             featuredNews.innerHTML = '';
 
+            const sortedArticles = sortArticlesBySlugDesc(articles);
+
 // Ambil 15 berita terbaru untuk featured news (skip 4 yang sudah di main carousel)
     // slice(4, 19) akan mencoba mengambil indices 4..18, tetapi jika tidak cukup artikel
     // maka hanya yang tersedia yang ditampilkan. Carousel akan tetap dapat digeser manual.
-    const featuredArticles = articles.slice(4, 19);
+    const featuredArticles = sortedArticles.slice(4, 19);
 
             // Render featured news items
             featuredArticles.forEach(article => {

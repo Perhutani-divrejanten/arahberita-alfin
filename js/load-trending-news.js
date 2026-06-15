@@ -64,6 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Fetch articles.json dan update trending news
+    function sortArticlesBySlugDesc(articles) {
+        return Array.isArray(articles)
+            ? articles.slice().sort((a, b) => {
+                const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                return numB - numA;
+            })
+            : articles;
+    }
+
     fetch('/articles.json')
         .then(response => {
             if (!response.ok) throw new Error('Failed to load articles.json');
@@ -74,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             trendingItems.forEach(item => item.remove());
 
             // Ambil 3 berita terbaru untuk trending news (skip 10 yang sudah di carousel)
-            const trendingArticles = articles.slice(10, 13);
+            const trendingArticles = sortArticlesBySlugDesc(articles).slice(10, 13);
 
             // Render trending news items
             trendingArticles.forEach((article, index) => {

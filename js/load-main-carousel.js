@@ -63,6 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return item;
     }
 
+    function sortArticlesBySlugDesc(articles) {
+        return Array.isArray(articles)
+            ? articles.slice().sort((a, b) => {
+                const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                return numB - numA;
+            })
+            : articles;
+    }
+
     // Fetch articles.json dan update carousel
     fetch('/articles.json')
         .then(response => {
@@ -73,8 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear existing carousel items
             mainCarousel.innerHTML = '';
 
+            const sortedArticles = sortArticlesBySlugDesc(articles);
             // Ambil 4 berita terbaru untuk carousel
-            const latestArticles = articles.slice(0, 4);
+            const latestArticles = sortedArticles.slice(0, 4);
 
             // Render carousel items
             latestArticles.forEach((article, index) => {

@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const breakingNewsCarousel = document.getElementById('breakingNewsCarousel');
     if (!breakingNewsCarousel) return;
 
+    function sortArticlesBySlugDesc(articles) {
+        return Array.isArray(articles)
+            ? articles.slice().sort((a, b) => {
+                const numA = (() => { const m = String(a.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                const numB = (() => { const m = String(b.slug || '').match(/(\d+)/); return m ? parseInt(m[1], 10) : 0; })();
+                return numB - numA;
+            })
+            : articles;
+    }
+
     fetch('/articles.json')
         .then(response => {
             if (!response.ok) throw new Error('Failed to load articles.json');
@@ -14,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(articles => {
             breakingNewsCarousel.innerHTML = '';
-            const breakingNewsArticles = articles.slice(0, 8);
+            const breakingNewsArticles = sortArticlesBySlugDesc(articles).slice(0, 8);
 
             breakingNewsArticles.forEach(article => {
                 const item = document.createElement('div');
