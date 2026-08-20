@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 8 * * *'   # otomatis update setiap hari jam 15:00 WIB / 08:00 UTC
 
 jobs:
   deploy:
@@ -13,15 +13,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
+        
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies (if any)
+        run: |
+          if [ -f package.json ]; then npm ci; fi
 
       - name: Run static generator
         run: node tools/generate.js
@@ -29,33 +29,30 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
+          server: ftp.jabarinfo.id
+          username: deploy1@bandungbersuara.jabarinfo.id
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
           port: 21
-          local-dir: ./
+          protocol: ftp
+          local-dir: ./  # atau ./ jika ingin upload semua
           server-dir: /arahberita/
-          timeout: 120000
+          timeout: 90000
           dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
-            **/.github/**
             **/node_modules/**
-            **/tools/**
-            **/*.bak*
-            **/*.ipynb
-            **/*.ps1
-            **/*.py
-            **/*.log
-            **/.env*
+            **/.github/**
+            *.bak*
             articles_temp.json
             .DS_Store
+            .env
+            .env.local
+            *.log
+            TROUBLESHOOTING.md
             AUDIT_REPORT.md
-            AUTOMATION_README.md
-            GOOGLE_DRIVE_GUIDE.md
-            GOOGLE_DRIVE_IMAGES_GUIDE.md
-            LICENSE.txt
-            READ-ME.txt
-            SEARCH_SETUP.md
+            PERBAIKAN_STATUS.md
+            final-verification.ps1
+            fix-encoding.ps1
+            rebrand-to-warta-janten.ps1
+            replace-logo.ps1
